@@ -1,0 +1,20 @@
+<div class="info mt-5 ml-5">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../../../assets/pinaple.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{pinapple.name}}</h5>
+                <div class="border border-dark">
+                    <p class="card-text text-center">Amount: {{pinapple.amount}}</p>
+                </div>
+            </div>
+            <div class="card-body mx-auto d-flex row">
+                <button (click)="weightMinus()" type="button" class="btn btn-light">-</button>
+                <div class="border border-dark d-flex" style="width: 2rem;">
+                    <p class=" mx-auto my-auto">
+                    {{this.pinapple.weight}}
+                    </p>
+                </div>
+                <button (click)="weightPlus()" type="button" class="btn btn-light">+</button>
+            </div>
+        </div>
+    </div>
