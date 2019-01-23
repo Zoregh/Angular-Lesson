@@ -17,18 +17,15 @@ export class FruitsComponent implements OnInit {
     this.pinapple.name = 'Pineapple';
     this.pinapple.price = 2500;
     this.pinapple.weight = 1;
-    this.pinapple.amount = this.pinapple.price * this.pinapple.weight;
   }
 
   weightMinus() {
     if (this.pinapple.weight > 0) {
       this.pinapple.weight -= 0.5;
-      this.pinapple.amount = this.pinapple.price * this.pinapple.weight;
     }
   }
   weightPlus() {
     this.pinapple.weight += 0.5;
-    this.pinapple.amount = this.pinapple.price * this.pinapple.weight;
     if (this.pinapple.weight > 3) {
       alert('Are you kidding me?');
     }
