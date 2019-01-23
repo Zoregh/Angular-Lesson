@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './Components/first/first.component';
-import { FruitsComponent } from './Components/first/fruits/fruits.component';
+import { FruitsComponent } from './Components/fruits/fruits.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
