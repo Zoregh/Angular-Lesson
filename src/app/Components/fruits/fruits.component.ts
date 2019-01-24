@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD:src/app/Components/fruits/fruits.component.ts
-import { Mirg } from '../../Models/fruit.export';
-=======
 import { Mirg } from '../../Models/Fruit';
->>>>>>> Lesson3:src/app/Components/fruits/fruits.component.ts
 
 
 @Component({
