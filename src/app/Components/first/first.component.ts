@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../Models/newUser';
+import { User } from '../../Models/User';
 
 @Component({
   selector: 'app-first',
@@ -7,19 +7,35 @@ import { User } from '../../Models/newUser';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent implements OnInit {
-  public user: User = new User;
+  public user: User = new User();
+  public showHide:boolean = true;
+  public users: Array<User> = [];
+  public regions: Array<string> = ['Արագածոտն', 'Արարատ', 'Արմաւիր', 'Գեղարքունիք', 'Լոռի', 'Կոտայք', 'Շիրակ', 'Սիւնիք', 'Վայոց ձոր', 'Տաւուշ'];
+  public freshvVew(){
+    this.showHide = !this.showHide;
+  }
 
   constructor() { }
 
   ngOnInit() {
-    this.user.name = 'anun';
-    this.user.lastname = '';
-    this.user.email = '';
-    this.user.password = 0;
-    this.user.address = '';
-    this.user.city = '';
-    this.user.zip = '';
-    console.log(this.user.name);
+  }
+  submit(MyForm){
+    this.user.name = MyForm.name.value;
+    this.user.lastname = MyForm.lastname.value;
+    this.user.email = MyForm.email.value;
+    this.user.password = MyForm.password.value;
+    this.user.region = MyForm.region.value;
+    this.user.city = MyForm.city.value;
+    this.user.address = MyForm.address.value;
+    this.user.zip = MyForm.zip.value;
+
+    if(this.user.checkFields()) {
+      this.users.push(this.user);
+      this.freshvVew();
+    } else {
+      alert("Please, fill all fields.");
+    }
+    
   }
 
 }
