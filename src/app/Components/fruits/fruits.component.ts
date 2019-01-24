@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Mirg } from '../../../Models/fruit.export';
+import { Mirg } from '../../Models/fruit.export';
 
 
 @Component({
