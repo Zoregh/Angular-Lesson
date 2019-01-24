@@ -12,6 +12,14 @@ export class FirstComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.user.name = 'anun';
+    this.user.lastname = '';
+    this.user.email = '';
+    this.user.password = 0;
+    this.user.address = '';
+    this.user.city = '';
+    this.user.zip = '';
+    console.log(this.user.name);
   }
 
 }
