@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { FruitsComponent } from './Components/fruits/fruits.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { FirstComponent } from './Components/first/first.component';
+import { SecondComponent } from './Components/second/second.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FruitsComponent,
     NavbarComponent,
-    FirstComponent
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     BrowserModule,
