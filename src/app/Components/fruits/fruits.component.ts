@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Mirg } from '../../Models/Fruit';
-
+import { Component, OnInit } from '@angular/core';
+import { Mirg } from 'src/app/Models/Fruit';
 
 @Component({
   selector: 'app-fruits',
@@ -8,25 +7,17 @@ import { Mirg } from '../../Models/Fruit';
   styleUrls: ['./fruits.component.css']
 })
 export class FruitsComponent implements OnInit {
- 
-  @Input() public currentFruit: any;
+  fruitsArray: Array<any> = [new Mirg('Banana', 550, 1,'../assets/pinaple.jpg'),
+                      new Mirg('Pinnapple', 2500, 1, '../assets/pinaple.jpg'),
+                      new Mirg('Tandz', 300, 1, '../assets/pinaple.jpg'),
+                      new Mirg('Xndzor', 250, 1, '../assets/pinaple.jpg'),
+                      new Mirg('Mandarin', 300, 1, '../assets/pinaple.jpg')
+                    ];
 
   constructor() { }
 
   ngOnInit() {
-    
   }
-
-  weightMinus() {
-    if (this.currentFruit.weight > 0) {
-      this.currentFruit.weight -= 0.5;
-    }
-  }
-  weightPlus() {
-    this.currentFruit.weight += 0.5;
-    if (this.currentFruit.weight > 3) {
-      alert('Are you kidding me?');
-    }
-  }
+  
 
 }

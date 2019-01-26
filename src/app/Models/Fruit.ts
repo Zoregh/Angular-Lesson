@@ -1,9 +1,9 @@
 export class Mirg {
-    constructor(n,p,w,z) {
-        this.name = n;
-        this.price = p;
-        this.weight = w;
-        this.image = z;
+    constructor(name, price, weight, image) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
+        this.image = image;
     }
     name: string;
     price: number;
