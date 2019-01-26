@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-vegetable',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VegetableComponent implements OnInit {
 
+  @Input() public currentVegetable: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  weightMinus() {
+    if (this.currentVegetable.weight > 0) {
+      this.currentVegetable.weight -= 0.5;
+    }
+  }
+  weightPlus() {
+    this.currentVegetable.weight += 0.5;
   }
 
 }
