@@ -9,6 +9,15 @@ export class VegetableComponent implements OnInit {
 
   @Input() public currentVegetable: any;
 
+  public getStyles() {
+    let styles = {
+      'border': '10px solid',
+      'border-color': this.currentVegetable.color
+    };
+    return styles;
+  }
+
+
   constructor() { }
 
   ngOnInit() {
