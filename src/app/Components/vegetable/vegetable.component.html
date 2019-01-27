@@ -1,4 +1,4 @@
-<div [ngStyle]="getStyles()" class="info mt-5 ml-5">
+<div [ngStyle]="getStyles(currentVegetable)" class="info mt-5 ml-5">
     <div class="card">
         <img class="card-img-top mt-5" [src]="currentVegetable.img" alt="Card image cap">
         <div class="card-body my-5">
@@ -8,9 +8,9 @@
             </div>
         </div>
         <div class="card-body mx-auto d-flex row justify-content-center">
-            <button (click)="weightMinus()" type="button" class="btn btn-light">-</button>
+            <button (click)="weightMinus(currentVegetable)" type="button" class="btn btn-light">-</button>
             <input type="number" [(ngModel)]="currentVegetable.weight" class="w-25 pl-3" min="0">
-            <button (click)="weightPlus()" type="button" class="btn btn-light">+</button>
+            <button (click)="weightPlus(currentVegetable)" type="button" class="btn btn-light">+</button>
         </div>
     </div>
 </div>

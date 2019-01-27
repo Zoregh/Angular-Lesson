@@ -9,10 +9,10 @@ export class VegetableComponent implements OnInit {
 
   @Input() public currentVegetable: any;
 
-  public getStyles() {
+  public getStyles(a) {
     let styles = {
       'border': '10px solid',
-      'border-color': this.currentVegetable.color
+      'border-color': a.color
     };
     return styles;
   }
@@ -23,13 +23,13 @@ export class VegetableComponent implements OnInit {
   ngOnInit() {
   }
 
-  weightMinus() {
-    if (this.currentVegetable.weight > 0) {
-      this.currentVegetable.weight -= 0.5;
+  public weightMinus(a) {
+    if (a.weight > 0) {
+      a.weight -= 0.5;
     }
   }
-  weightPlus() {
-    this.currentVegetable.weight += 0.5;
+  public weightPlus(a) {
+    a.weight += 0.5;
   }
 
 }
