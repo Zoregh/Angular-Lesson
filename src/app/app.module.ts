@@ -12,6 +12,8 @@ import { SecondComponent } from './Components/second/second.component';
 import { FruitsComponent } from './Components/fruits/fruits.component';
 import { VegetablesComponent } from './Components/vegetables/vegetables.component';
 import { VegetableComponent } from './Components/vegetable/vegetable.component';
+import { ProductComponent } from './Components/product/product.component';
+import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { VegetableComponent } from './Components/vegetable/vegetable.component';
     SecondComponent,
     FruitsComponent,
     VegetablesComponent,
-    VegetableComponent
+    VegetableComponent,
+    ProductComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

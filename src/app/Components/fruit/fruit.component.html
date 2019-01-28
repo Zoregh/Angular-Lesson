@@ -8,9 +8,9 @@
             </div>
         </div>
         <div class="card-body mx-auto d-flex row justify-content-center">
-            <button (click)="weightMinus()" type="button" class="btn btn-light">-</button>
+            <button (click)="weightMinus(currentFruit)" type="button" class="btn btn-light">-</button>
             <input type="number" [(ngModel)]="currentFruit.weight" class="w-25 pl-3" min="0">
-            <button (click)="weightPlus()" type="button" class="btn btn-light">+</button>
+            <button (click)="weightPlus(currentFruit)" type="button" class="btn btn-light">+</button>
         </div>
     </div>
 </div>

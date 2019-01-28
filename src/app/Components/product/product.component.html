@@ -1,0 +1,17 @@
+<div [ngStyle]="getStyles(currentProduct)" class="info mt-5 ml-5">
+    <div class="card" style="width: 18rem;">
+        <h5 class="text-center">{{currentProduct.type}}</h5>
+        <img class="card-img-top" [src]="currentProduct.image" alt="Card image cap">
+        <div class="card-body">
+            <h1 class="card-title text-center">{{currentProduct.name}}</h1>
+            <h5 class="text-center">1 {{currentProduct.countMethod}} : {{currentProduct.price}} Amd</h5>
+        </div>
+        <div class="card-body mx-auto d-flex row justify-content-center">
+            <button (click)="weightMinus(currentProduct)" type="button" class="btn btn-light">-</button>
+            <input type="number" [(ngModel)]="currentProduct.weight" class="w-25 pl-3" min="0">
+            <button (click)="weightPlus(currentProduct)" type="button" class="btn btn-light">+</button>
+        </div>
+        <h5 class="card-text text-center text-dark mb-3">Amount: {{currentProduct.price * currentProduct.weight}} Amd</h5>
+        <button>Add to Cart</button>
+    </div>
+</div>
