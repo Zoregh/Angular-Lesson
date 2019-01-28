@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GeneralService } from '../../Services/general.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ export class FruitComponent implements OnInit {
  
   @Input() public currentFruit: any;
 
-  constructor() { }
+  constructor(public fruitService:GeneralService) { }
 
   ngOnInit() {
     

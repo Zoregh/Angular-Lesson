@@ -31,7 +31,6 @@ export class VegetablesComponent implements OnInit {
   constructor(private myService:GeneralService) { }
 
   ngOnInit() {
-    console.log(this.myService.username = 'Vke');
   }
 
 }

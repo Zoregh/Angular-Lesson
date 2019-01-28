@@ -29,7 +29,7 @@ import { VegetableComponent } from './Components/vegetable/vegetable.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

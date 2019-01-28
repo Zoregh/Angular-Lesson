@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Mirg } from 'src/app/Models/Fruit';
+import { GeneralService } from '../../Services/general.service';
 
 @Component({
   selector: 'app-fruits',
@@ -7,15 +7,9 @@ import { Mirg } from 'src/app/Models/Fruit';
   styleUrls: ['./fruits.component.css']
 })
 export class FruitsComponent implements OnInit {
-  fruitsArray: Array<any> = [
-    new Mirg('Banana', 550, 1,'../assets/Images/Fruits/pinaple.jpg'),
-    new Mirg('Pinnapple', 2500, 1, '../assets/Images/Fruits/pinaple.jpg'),
-    new Mirg('Tandz', 300, 1, '../assets/Images/Fruits/pinaple.jpg'),
-    new Mirg('Xndzor', 250, 1, '../assets/Images/Fruits/pinaple.jpg'),
-    new Mirg('Mandarin', 300, 1, '../assets/Images/Fruits/pinaple.jpg')
-  ];
+  
 
-  constructor() { }
+  constructor(public fruitService:GeneralService) { }
 
   ngOnInit() {
   }
