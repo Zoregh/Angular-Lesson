@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GeneralService } from '../../Services/general.service';
 
 @Component({
   selector: 'app-vegetable',
   templateUrl: './vegetable.component.html',
-  styleUrls: ['./vegetable.component.css']
+  styleUrls: ['./vegetable.component.css'],
+  providers: [GeneralService]
 })
 export class VegetableComponent implements OnInit {
+  public username:string = 'Gagas';
 
   @Input() public currentVegetable: any;
 
@@ -18,9 +21,10 @@ export class VegetableComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private myService:GeneralService) { }
 
   ngOnInit() {
+    console.log(this.myService.username);
   }
 
   public weightMinus(a) {

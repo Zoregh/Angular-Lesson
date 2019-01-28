@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Vegetable } from 'src/app/Models/Vegetable'
+import { Vegetable } from 'src/app/Models/Vegetable';
+import { GeneralService } from '../../Services/general.service';
 
 @Component({
   selector: 'app-vegetables',
@@ -27,9 +28,10 @@ export class VegetablesComponent implements OnInit {
     new Vegetable('Boxk', 180, 1, '#D9CC94', 'Kg', '../assets/Images/Vegetables/spitak_boxk.png'),
   ];
 
-  constructor() { }
+  constructor(private myService:GeneralService) { }
 
   ngOnInit() {
+    console.log(this.myService.username = 'Vke');
   }
 
 }

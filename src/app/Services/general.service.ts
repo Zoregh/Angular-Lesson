@@ -1,0 +1,14 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class GeneralService {
+  public username:string = 'Valodik';
+
+  printData(){
+    console.log(this.username);
+  }
+
+  constructor() { }
+}
