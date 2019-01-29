@@ -10,41 +10,32 @@ import { GeneralService } from '../../Services/general.service';
 
 })
 export class ProductsComponent implements OnInit {
-public productsArr: Array<any> = this.pruductService.mainArr;
-public fruits: Array<any> = [];
-public vegetables: Array<any> = [];
+public productsArr: Array<any>;
+public productTypes: Array<string> = [];
+public typeFilter: string = "all";
 
-
-
-  constructor(public pruductService:GeneralService) { }
+  constructor(public pruductService:GeneralService) {
+    this.productsArr = this.pruductService.mainArr.slice();
+  }
 
   ngOnInit() {
-    this.sortProducts();
+    this.getTypes();
   }
 
-
-  public sortProducts(){
-    for (let i = 0; i < this.pruductService.mainArr.length; i++){
-      if (this.pruductService.mainArr[i].type == 'Friut') {
-        this.fruits.push(this.pruductService.mainArr[i]);
-      } else if (this.pruductService.mainArr[i].type == 'Vegetable'){
-        this.vegetables.push(this.pruductService.mainArr[i])
+  getTypes() {
+    this.pruductService.mainArr.forEach(product => {
+      if (this.productTypes.indexOf(product.type) == -1) {
+        this.productTypes.push(product.type);
       }
+    });
+  }
+
+  filterProducts() {
+    if (this.typeFilter == 'all') {
+      this.productsArr = this.pruductService.mainArr;  
+      return;
     }
+    this.productsArr = this.pruductService.mainArr.filter(product => product.type == this.typeFilter);
   }
-
-    allProducts(){
-    this.productsArr = this.pruductService.mainArr; 
-  }
-
-  onlyFruits(){
-    this.productsArr = this.fruits;
-  }
-
-  onlyVegetables(){
-    this.productsArr = this.vegetables;
-  } 
-  
-
 
 }

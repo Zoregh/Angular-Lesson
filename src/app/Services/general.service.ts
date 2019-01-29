@@ -1,4 +1,4 @@
-import { Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Product } from '../Models/Product';
 
 @Injectable({
@@ -31,6 +31,7 @@ export class GeneralService {
     new Product(200, 1, 'Sox', '#A53245', '../assets/Images/Vegetables/karmir_sox.png', 'Vegetable', 'Kg'),
     new Product(180, 1, 'Boxk', '#D9CC94', '../assets/Images/Vegetables/spitak_boxk.png', 'Vegetable', 'Kg'),
     new Product(200, 1, 'Sox', '#DB7E49', '../assets/Images/Vegetables/sox.png', 'Vegetable', 'Kg'),
+    new Product(2500, 1, 'Pork', '', '../assets/Images/deafult.jpg', 'Meat', 'Kg'),
   ];
   
 

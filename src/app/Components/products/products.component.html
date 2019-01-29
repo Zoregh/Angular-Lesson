@@ -1,26 +1,9 @@
-<!-- <div class="form-group mt-3">
-  <select id="inputState" class="form-control w-75" name="region">
-      <option (onselect)="allProducts()">All Products</option>
-      <option (onselect)="onlyFruits()">Fruits</option>
-      <option (onselect)="onlyVegetables()">Vegetables</option>
+<div class="form-group mb-5">
+  <select id="inputState" class="form-control" [(ngModel)]="typeFilter" (change)="filterProducts()">
+      <option value="all">All Products</option>
+      <option *ngFor="let type of productTypes" [value]="type">{{ type }}</option>
   </select>
-</div> -->
-
-<div class="btn-group">
-  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-    aria-expanded="false">
-    Category
-  </button>
-  <div class="dropdown-menu  text-center">
-    <button (click)="allProducts()" type="button" class="btn">All Products</button>
-    <div class="dropdown-divider"></div>
-    <button (click)="onlyFruits()" type="button" class="btn">Fruits</button>
-    <div class="dropdown-divider"></div>
-    <button (click)="onlyVegetables()" type="button" class="btn">Vegetables</button>
-  </div>
 </div>
-
-
 
 <div class="container col-12 d-flex justify-content-center flex-wrap">
   <app-product *ngFor="let product of productsArr" [currentProduct]="product"></app-product>
