@@ -6,7 +6,7 @@ import { GeneralService } from '../../Services/general.service';
   selector: 'app-fruit',
   templateUrl: './fruit.component.html',
   styleUrls: ['./fruit.component.css'],
-  providers: [GeneralService]
+  // providers: [GeneralService]
 
 })
 export class FruitComponent implements OnInit {

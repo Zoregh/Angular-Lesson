@@ -10,9 +10,10 @@ import { GeneralService } from '../../Services/general.service';
 
 })
 export class ProductsComponent implements OnInit {
-public productsArr: Array<any>;
-public productTypes: Array<string> = [];
-public typeFilter: string = "all";
+  public cartItems: Array<any> = [];
+  public productsArr: Array<any>;
+  public productTypes: Array<string> = [];
+  public typeFilter: string = "all";
 
   constructor(public pruductService:GeneralService) {
     this.productsArr = this.pruductService.mainArr.slice();

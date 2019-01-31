@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GeneralService } from './Services/general.service';
+import { RouterModule } from '@angular/router';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +33,8 @@ import { ProductsComponent } from './Components/products/products.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]

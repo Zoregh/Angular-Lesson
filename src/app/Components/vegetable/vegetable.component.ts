@@ -5,7 +5,7 @@ import { GeneralService } from '../../Services/general.service';
   selector: 'app-vegetable',
   templateUrl: './vegetable.component.html',
   styleUrls: ['./vegetable.component.css'],
-  providers: [GeneralService]
+  // providers: [GeneralService]
 })
 export class VegetableComponent implements OnInit {
 
