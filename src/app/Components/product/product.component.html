@@ -14,7 +14,7 @@
                 <button (click)="pruductService.weightPlus(currentProduct)" type="button" class="btn btn-light">+</button>
             </div>
             <h5 class="card-text text-center text-dark mb-3">Amount: {{currentProduct.price * currentProduct.weight}} Amd</h5>
-            <button>Add to Cart</button>
+            <button (click)="pruductService.addToCart(currentProduct)">Add to Cart</button>
         </div>
     </div>
     

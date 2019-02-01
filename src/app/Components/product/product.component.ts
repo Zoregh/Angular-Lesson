@@ -6,7 +6,7 @@ import { GeneralService } from '../../Services/general.service';
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
-  providers: [GeneralService]
+  // providers: [GeneralService]
 
 })
 export class ProductComponent implements OnInit {
@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
     return styles;
   }
 
-  constructor(private pruductService:GeneralService ) { }
+  constructor(public pruductService:GeneralService ) { }
 
   ngOnInit() {
   }

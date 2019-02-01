@@ -33,7 +33,10 @@ export class GeneralService {
     new Product(200, 1, 'Sox', '#DB7E49', '../assets/Images/Vegetables/sox.png', 'Vegetable', 'Kg', 25),
     new Product(2500, 1, 'Pork', '', '../assets/Images/deafult.jpg', 'Meat', 'Kg', 26),
   ];
-  
+
+  public cart: Array<any> = [];
+  public cartSum: number = 0;
+
   getProductByID(id){
     let temp;
     this.mainArr.map((item)=>{
@@ -49,11 +52,12 @@ export class GeneralService {
     if (a.weight <= 0) return;
     
     if(a.countMethod == 'Piece') {
-      a.weight -= 1
+      a.weight -= 1;
     } else {
       a.weight -= 0.5;
     }
   }
+
   public weightPlus(a) {
     if(a.countMethod == 'Piece') {
       a.weight +=1;
@@ -62,6 +66,23 @@ export class GeneralService {
     }
   }
 
+  public addToCart(a) {
+    if (this.cart.lastIndexOf(a) == -1) {
+      this.cart.push(a);
+    }
+  }
+
+  goTrash(a){
+    this.cart.splice(this.cart.indexOf(a),1);
+    this.cartSum -= a.price * a.weight;
+  }
+
+  getSum() {
+    this.cart.forEach(product => {
+        this.cartSum += product.price * product.weight;
+    });
+  }
+  
 
   constructor() { }
 

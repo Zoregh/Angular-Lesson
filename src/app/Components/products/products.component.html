@@ -6,25 +6,33 @@
     </select>
   </div>
   <!-- Button trigger modal -->
-  <button type="button" class="btn p-0" data-toggle="modal" data-target="#exampleModal">
-      <div>
-        <div></div>  
-        <img src="../../../assets/Images/cart.png">
-      </div>
+  <button type="button" class="btn p-0" data-toggle="modal" data-target="#exampleModal" (click)="pruductService.getSum()">
+    <div>
+      <img id="cart" src="../../../assets/Images/cart.png">
+    </div>
   </button>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade w-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Total summary : {{pruductService.cartSum}} Amd</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          ...
+        <div class="modal-body d-inline-flex flex-wrap">
+          <div *ngFor="let item of pruductService.cart">
+            <div class="card">
+                <div (click)="pruductService.goTrash(item)" class="d-flex flex-row-reverse">
+                  <img id="trash" src="../../../assets/Images/delete.png">
+                </div>
+                <img class="card-img-top mx-auto" [src]="item.image" alt="Card image cap">
+                <h5 class="card-text text-center text-dark mb-3">{{item.weight}} : {{item.countMethod}}</h5>
+                <h5 class="card-text text-center text-dark mb-3">Amount: {{item.price * item.weight}} Amd</h5>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

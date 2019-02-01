@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   public productTypes: Array<string> = [];
   public typeFilter: string = "all";
 
-  constructor(public pruductService:GeneralService) {
+  constructor(private pruductService:GeneralService) {
     this.productsArr = this.pruductService.mainArr.slice();
   }
 
