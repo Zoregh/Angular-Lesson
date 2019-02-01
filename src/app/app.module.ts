@@ -16,6 +16,8 @@ import { VegetablesComponent } from './Components/vegetables/vegetables.componen
 import { VegetableComponent } from './Components/vegetable/vegetable.component';
 import { ProductComponent } from './Components/product/product.component';
 import { ProductsComponent } from './Components/products/products.component';
+import { ProductDetailsComponent } from './Components/product-details/product-details.component';
+import { Page404Component } from './Components/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProductsComponent } from './Components/products/products.component';
     VegetablesComponent,
     VegetableComponent,
     ProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductDetailsComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

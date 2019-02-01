@@ -21,27 +21,12 @@ export class ProductComponent implements OnInit {
     return styles;
   }
 
-  constructor(private pruductService:GeneralService) { }
+  constructor(private pruductService:GeneralService ) { }
 
   ngOnInit() {
   }
 
-  public weightMinus(a) {
-    if (a.weight <= 0) return;
-    
-    if(a.countMethod == 'Piece') {
-      a.weight -= 1
-    } else {
-      a.weight -= 0.5;
-    }
-  }
-  public weightPlus(a) {
-    if(a.countMethod == 'Piece') {
-      a.weight +=1;
-    } else {
-      a.weight += 0.5;
-    }
-  }
+
 
 
 }
