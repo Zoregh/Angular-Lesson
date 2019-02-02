@@ -74,10 +74,11 @@ export class GeneralService {
 
   goTrash(a){
     this.cart.splice(this.cart.indexOf(a),1);
-    this.cartSum -= a.price * a.weight;
+    this.getSum();
   }
 
   getSum() {
+    this.cartSum = 0;
     this.cart.forEach(product => {
         this.cartSum += product.price * product.weight;
     });
