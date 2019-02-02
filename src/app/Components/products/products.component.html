@@ -13,7 +13,7 @@
   </button>
 
   <!-- Modal -->
-  <div class="modal fade w-100" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -23,14 +23,14 @@
           </button>
         </div>
         <div class="modal-body d-inline-flex flex-wrap">
-          <div *ngFor="let item of pruductService.cart">
-            <div class="card">
+          <div *ngFor="let item of pruductService.cart" class="mx-auto">
+            <div class="card" style="width: 8rem;">
                 <div (click)="pruductService.goTrash(item)" class="d-flex flex-row-reverse">
                   <img id="trash" src="../../../assets/Images/delete.png">
                 </div>
                 <img class="card-img-top mx-auto" [src]="item.image" alt="Card image cap">
-                <h5 class="card-text text-center text-dark mb-3">{{item.weight}} : {{item.countMethod}}</h5>
-                <h5 class="card-text text-center text-dark mb-3">Amount: {{item.price * item.weight}} Amd</h5>
+                <h5 class="card-text text-center text-dark mb-3">{{item.weight}} {{item.countMethod}}</h5>
+                <h5 class="card-text text-center text-dark mb-3">{{item.price * item.weight}} Amd</h5>
             </div>
           </div>
         </div>

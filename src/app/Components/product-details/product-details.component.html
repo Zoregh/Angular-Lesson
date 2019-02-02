@@ -1,17 +1,33 @@
-<div  class="info mt-5 ml-5">
-  <div class="card" style="width: 18rem;">
-          <h1 class="card-title text-center">{{currentObject.name}}</h1>
-          <h5 class="text-center">{{currentObject.type}}</h5>
-          <img class="card-img-top" [src]="currentObject.image" alt="Card image cap">
-          <div class="card-body">
-              <h5 class="text-center">1 {{currentObject.countMethod}} : {{currentObject.price}} Amd</h5>
-          </div>
-      <div class="card-body mx-auto d-flex row justify-content-center">
-          <button (click)="myserv.weightMinus(currentObject)" type="button" class="btn btn-light">-</button>
-          <input type="number" [(ngModel)]="currentObject.weight" class="w-25 pl-3" min="0">
-          <button (click)="myserv.weightPlus(currentObject)" type="button" class="btn btn-light">+</button>
-      </div>
-      <h5 class="card-text text-center text-dark mb-3">Amount: {{currentObject.price * currentObject.weight}} Amd</h5>
-      <button (click)="myserv.addToCart(currentObject)">Add to Cart</button>
-  </div>
+<a routerLink="" class="text-decoration-none">
+    <div class="go-back mt-5 ml-5">
+        <img id="back" src="../../../assets/Images/back.png">
+    </div>
+</a>
+<div class="container col-12 d-lg-flex row-sm justify-content-around mt-5">
+    <div  class="info  mt-5">
+        <div class="card mx-auto border border-dark" style="width: 18rem;">
+            <h1 class="card-title text-center">{{currentObject.name}}</h1>
+            <h5 class="text-center">{{currentObject.type}}</h5>
+            <img class="card-img-top" [src]="currentObject.image" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="text-center">1 {{currentObject.countMethod}} : {{currentObject.price}} Amd</h5>
+            </div>
+            <div class="card-body mx-auto d-flex row justify-content-center">
+                <button (click)="myserv.weightMinus(currentObject)" type="button" class="btn btn-light">-</button>
+                <input type="number" [(ngModel)]="currentObject.weight" class="w-25 pl-3" min="0">
+                <button (click)="myserv.weightPlus(currentObject)" type="button" class="btn btn-light">+</button>
+            </div>
+            <h5 class="card-text text-center text-dark mb-3">Amount: {{currentObject.price * currentObject.weight}} Amd</h5>
+            <button (click)="myserv.addToCart(currentObject)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="border border-dark mt-5">
+        <h1 class="text-center mt-5">About this {{currentObject.name}}</h1>
+        <hr />
+        <br />
+            <p class="text-center my-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo quibusdam soluta
+                 ipsum praesentium vero consequuntur adipisci similique cumque harum nisi qui
+                 reiciendis accusamus deleniti nam officia, distinctio debitis placeat ipsam!
+            </p>
+    </div>
 </div>
