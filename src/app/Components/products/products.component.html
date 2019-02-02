@@ -1,12 +1,55 @@
-<div class="container d-flex justify-content-between mx-0 px-0">
-  <div class="form-group mb-5 w-lg-25">
+<div class="container d-inline-flex col-12 justify-content-between bg-white sticky-top">
+  <div class="form-group my-auto">
     <select id="inputState" class="form-control" [(ngModel)]="typeFilter" (change)="filterProducts()">
-      <option value="all">All Products</option>
+      <option value="all">Products</option>
       <option *ngFor="let type of productTypes" [value]="type">{{ type }}</option>
     </select>
   </div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn p-0 col-2" data-toggle="modal" data-target="#exampleModal" (click)="pruductService.getSum()">
+    <div>
+      <img id="cart" src="../../../assets/Images/cart.png">
+    </div>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Total amount : {{pruductService.cartSum}} Amd</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body d-inline-flex flex-wrap">
+          <div *ngFor="let item of pruductService.cart" class="mx-auto">
+            <div class="card" style="width: 8rem;">
+              <div (click)="pruductService.goTrash(item)" class="d-flex flex-row-reverse">
+                <img id="trash" src="../../../assets/Images/delete.png">
+              </div>
+              <img class="card-img-top mx-auto" [src]="item.image" alt="Card image cap">
+              <h5 class="card-text text-center text-dark mb-3">{{item.weight}} {{item.countMethod}}</h5>
+              <h5 class="card-text text-center text-dark mb-3">{{item.price * item.weight}} Amd</h5>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="container col-12 d-flex justify-content-center flex-wrap">
-  <app-product *ngFor="let product of productsArr" [currentProduct]="product"></app-product>
-</div>
+<div class="container d-flex col-12">
+    <div class="col-1 mx-0 mt-5 px-0 aside">
+    </div>
+    <div class="container d-flex justify-content-center flex-wrap col-10 my-5">
+      <app-product *ngFor="let product of productsArr" [currentProduct]="product"></app-product>
+    </div>
+    <div class="col-1 mx-0 mt-5 px-0 aside">
+    </div> 
+  </div>
+  

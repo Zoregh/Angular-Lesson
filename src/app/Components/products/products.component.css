@@ -1,0 +1,15 @@
+.aside {
+    background-size: 100%;
+    background-image: url("../../../assets/Images/aside.jpg");
+    background-repeat: repeat-y;
+}
+
+#cart {
+    height: 50px;
+    width: 50px;
+}
+
+#trash{
+    height: 20px;
+    width: 20px;
+}
