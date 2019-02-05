@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GeneralService } from './Services/general.service';
 import { RouterModule } from '@angular/router';
+import { LoggedGuard } from './Guards/logged.guard'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +31,7 @@ import { Page404Component } from './Components/page404/page404.component';
     FormsModule,
     RouterModule
   ],
-  providers: [GeneralService],
+  providers: [GeneralService, LoggedGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
